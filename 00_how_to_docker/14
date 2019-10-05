@@ -1,0 +1,2 @@
+docker -d -p 8080:80 --name liar wordpress
+// one last thing
