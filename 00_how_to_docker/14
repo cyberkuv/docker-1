@@ -1,2 +1,2 @@
-docker -d -p 8080:80 --name liar wordpress
-// one last thing
+docker run -d wordpress
+docker run -d --name lair --rm -p 8080:80 --link spawning-pool:3306 wordpress
