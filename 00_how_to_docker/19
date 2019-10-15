@@ -1,1 +1,1 @@
-docker run --name Abathur -p 3000:3000 pyhon:2-slim //Not Complete!!
+docker run --name Abathur -p 3000:3000 -v ~/home/abathurr -it pyhon:2-slim
