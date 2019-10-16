@@ -1,2 +1,8 @@
-docker run --name Abathur -v ~/home/abathur -p 3000:3000 -dit python:2-slim
-docker exec Abathur pip install Flask
+docker run --name Abathur -v $HOME:/root -p 3000:3000 -it python:2-slim
+
+import pip
+from pip._internal import main
+
+main(["install", "flask"])
+from flask import Flask
+
