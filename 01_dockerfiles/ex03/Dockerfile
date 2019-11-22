@@ -1,5 +1,6 @@
 FROM ubuntu:16.04
-RUN apt-get update -q && DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends ca-certificates openssh-server curl postfix
+RUN apt-get update -q && apt-get install -yq --no-install-recommends ca-certificates openssh-server curl postfix
+ARG DEBIAN_FRONTEND=noninteractive
 WORKDIR /
 RUN curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh
 RUN bash script.deb.sh
@@ -10,5 +11,5 @@ ADD https://gist.githubusercontent.com/rizkyario/bc236974f3b0c9ce60cdb722bf12a70
 RUN chmod +x /entrypoint.sh
 CMD [ "bash", "/entrypoint.sh" ]
 
-#docker build -t ex03 .
-#docker run -it --rm -p 80:80 -p 21:22 --privileged ex03
+# Building The Exercise -> docker build -t ex03 .
+# Running The Exercise -> docker run -it --rm -p 8080:80 -p 8022:22 --privileged ex03
